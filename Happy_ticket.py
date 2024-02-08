@@ -1,9 +1,8 @@
 def is_happy_ticket(ticket):
-    str_ticket = str(ticket)
-    count_symbol = int(len(str_ticket))
+    count_symbol = len(ticket)
     middle = int(count_symbol / 2)
-    first_part = str_ticket[0:middle]
-    second_part = str_ticket[middle:]
+    first_part = ticket[0:middle]
+    second_part = ticket[middle:]
     index = 0
     sum_first_part = 0
     while index < middle:
@@ -17,10 +16,8 @@ def is_happy_ticket(ticket):
         sum_second_part = int(sum_second_part) + symbol
         index = index + 1
     if (sum_first_part == sum_second_part):
-        #print('true')
         return('true')
     else:
-        #print('false')
         return('false')
 
-print(is_happy_ticket(101))
+print(is_happy_ticket('1111001121'))
